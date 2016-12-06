@@ -4,7 +4,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { routing } from '../app.routing';
 
 import { AppComponent } from './components/home/app.component';
-import { AboutComponent } from './components/about/about.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ import { AboutComponent } from './components/about/about.component';
   ],
   declarations: [
     AppComponent,
-    AboutComponent
+    TableComponent
   ],
   bootstrap: [ AppComponent ]
 })
