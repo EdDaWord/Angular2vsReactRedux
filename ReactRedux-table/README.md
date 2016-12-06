@@ -4,23 +4,22 @@ Define the State Shape
 {
   fetchedPeople: {
     isFetching: false,          // For showing a spinner
-    didInvalidate: false,       // to show that data is stale
     lastUpdated: 1439478405547, // time which the API was called
     people: [
       {
         id: 1,
-        first_name: ed1,
-        last_name: wang1
+        name: 'ed1 wang1',
+        phone: '911'
       },
       {
         id: 2,
-        first_name: ed2,
-        last_name: wang2
+        name: 'ed2 wang2',
+        phone: '301'
       },
       {
         id: 3,
-        first_name: ed3,
-        last_name: wang3
+        name: 'ed2 wang2',
+        phone: '101'
       }
     ]
   }
@@ -36,25 +35,24 @@ So users can edit people outside of a API Call.
   people: {
     1: {
       id: 1,
-      first_name: ed1,
-      last_name: wang1
+      name: 'ed1 wang1',
+      phone: '911'
     },
     2: {
       id: 2,
-      first_name: ed2,
-      last_name: wang2
+      name: 'ed2 wang2',
+      phone: '301'
     },
     3: {
       id: 3,
-      first_name: ed3,
-      last_name: wang3
+      name: 'ed2 wang2',
+      phone: '101'
     }
   },
   fetchedPeople: {
     isFetching: false,          // For showing a spinner
-    didInvalidate: false,       // to show that data is stale
     lastUpdated: 1439478405547, // time which the API was called
-    peopleIds: [ 1, 2, 3 ]
+    peopleIds: [ 1, 2, 3 ]      // Ids corresponding to the people's object (Think database ids)
   }
 }
 ```
