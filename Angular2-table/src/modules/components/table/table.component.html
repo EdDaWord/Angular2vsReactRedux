@@ -1,4 +1,17 @@
 <div>
+  <input
+    [value]="person_name"
+    (input)="person_name = $event.target.value"
+    placeholder="Ed Wang" />
+  <input
+    [value]="person_email"
+    (input)="person_email = $event.target.value"
+    placeholder="ed@email.com" />
+  <input
+    [value]="person_phone"
+    (input)="person_phone = $event.target.value"
+    placeholder="911" />
+  <button (click)="submitPerson()" color="primary">Submit Person</button>
   <ul>
     <li *ngFor="let person of people; let i = index;">
       {{person.name}} , {{person.phone}} , {{person.email}}

@@ -14,8 +14,10 @@ import { PeopleService } from '../../services/people.service';
 
 export class TableComponent {
 
-  errorMessage: string;
-  people: Array<string> = [];
+  person_name: string = '';
+  person_email: string = '';
+  person_phone: string = '';
+  people: Array<Object> = [];
 
   constructor(public peopleService: PeopleService) {
 
@@ -23,9 +25,15 @@ export class TableComponent {
 
   ngOnInit() {
     this.peopleService.fetchPeople()
-      .subscribe(
-         people => this.people = people,
-         error =>  this.errorMessage = <any>error);
+      .subscribe(people => this.people = people);
+  }
+
+  submitPerson() {
+    this.people.push({
+      name: this.person_name,
+      email: this.person_email,
+      phone: this.person_phone
+    });
   }
 }
 
