@@ -15,10 +15,8 @@ import { PeopleService } from '../../services/people.service';
 export class TableComponent {
 
   errorMessage: string;
-  people: [];
+  people: Array<string> = [];
 
-
-  // TypeScript public modifiers
   constructor(public peopleService: PeopleService) {
 
   }
