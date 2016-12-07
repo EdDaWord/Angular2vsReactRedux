@@ -1,39 +1,33 @@
 import { Component } from '@angular/core';
 import './table.component.scss';
 
+
+import { PeopleService } from '../../services/people.service';
+
 @Component({
   selector: 'table-app',
+  providers: [
+    PeopleService
+  ],
   templateUrl: './table.component.html'
 })
 
 export class TableComponent {
 
-  // Set our default values
-  localState = {
-    people: [
-      {
-        id: 1,
-        name: 'ed1 wang1',
-        phone: '911',
-        email: 'userONE@ed.com'
-      },
-      {
-        id: 2,
-        name: 'ed2 wang2',
-        phone: '301',
-        email: 'userTWO@ed.com'
-      },
-      {
-        id: 3,
-        name: 'ed2 wang2',
-        phone: '101',
-        email: 'userTHREE@ed.com'
-      }
-    ]
-  };
+  errorMessage: string;
+  people: [];
+
+
+  // TypeScript public modifiers
+  constructor(public peopleService: PeopleService) {
+
+  }
 
   ngOnInit() {
-    console.log('hello `Table` component');
+    this.peopleService.fetchPeople()
+      .subscribe(
+         people => this.people = people,
+         error =>  this.errorMessage = <any>error);
   }
 }
 
