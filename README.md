@@ -13,13 +13,21 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 ### Architecture
 
  (1) Modules `// Functionally the root node of a set of components/services.`
+
  (2) Components `// Controller to a view`
+
  (3) Templates `// HTML`
+
  (4) Metadata `// decorators, which help angular understand a component/module`
+
  (5) Data binding `// The way which the DOM & Component communicate`
+
  (6) Directives `// Attributes on an HTML element`
+
  (7) Services `// A class with a narrow, well-defined purpose`
+
  (8) Dependency injection `// Which components/modules are needed`
+
  
 
 ## [React](https://facebook.github.io/react/)
