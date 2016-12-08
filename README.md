@@ -1,26 +1,14 @@
 # AngularJS 2.x vs React + Redux
 
-This is a comparison of AngularJS 2 and React + Redux. The purpose of this comparison is to see the pros and cons of each framework when dealing with MVC and API Calls.
-
-#### Code
-1) ReactJS Hello World
-2) AngularJS 2 Hello World
-3) React + Redux + Thunk (User table)
-
-Edits, comments, and insight are welcome.
+This is a comparison of AngularJS 2 and React + Redux. The purpose of this comparison is to see the pros and cons of each framework when dealing with MVC, API Calls, and Componentization of UI.
 
 ## [AngularJS 2](https://angular.io/)
-
-### Languages 
 - AngularJS 2 can be written in TypeScript, Dart, or Vinilla JavaScript.
-
-#### [TypeScript](www.typescriptlang.org)
-- TypeScript ⊇ JavaScript
-- Mistakes can be found during transpilation.
-
-#### [DART](www.dartlang.org)
-- General purpose programming language.
-- Class-based, single inheritance, object-oriented language with C-style Syntax which can be transcompiled into JS.
+- Only TypeScript documentation exists right now. (Dec 7, 2016)
+  
+  #### [TypeScript](www.typescriptlang.org)
+  - TypeScript ⊇ JavaScript
+  - Mistakes (associated with types) can be found during transpilation.
 
 ### AngularJS 2
 [ insert picture of how these 8 things fit together ]
