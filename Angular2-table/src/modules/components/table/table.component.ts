@@ -4,16 +4,18 @@ import './table.component.scss';
 
 import { PeopleService } from '../../services/people.service';
 
+//Metadata
 @Component({
   selector: 'table-app',
   providers: [
-    PeopleService
+    PeopleService // Dependency Injector
   ],
   templateUrl: './table.component.html'
 })
 
 export class TableComponent {
 
+  // Data binding
   person_name: string = '';
   person_email: string = '';
   person_phone: string = '';
