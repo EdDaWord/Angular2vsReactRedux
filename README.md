@@ -3,38 +3,55 @@
 This is a comparison of AngularJS 2 and React + Redux. The purpose of this comparison is to see the pros and cons of each framework when dealing with MVC, API Calls, and Componentization of UI.
 
 ## [AngularJS 2](https://angular.io/)
-- AngularJS 2 can be written in TypeScript, Dart, or Vinilla JavaScript.
-- Only TypeScript documentation exists right now. (Dec 7, 2016)
+- AngularJS 2 can be written in TypeScript, Dart, or Vanilla JavaScript.
+- Only TypeScript documentation exists right now. (Dec 7, 2016).
   
   #### [TypeScript](www.typescriptlang.org)
-  - TypeScript ⊇ JavaScript
+  - TypeScript ⊇ JavaScript.
   - Mistakes (associated with types) can be found during transpilation.
 
-### Architecture
+  ### Architecture
+  <img src="/diagrams/AngularArchitecture.png" width="720">
 
- (1) Modules `// Functionally the root node of a set of components/services.`
+   (1) Modules `// Functionally the root node of a set of components/services`
 
- (2) Components `// Controller to a view`
+   (2) Components `// Controller to the HTML`
 
- (3) Templates `// HTML`
+   (3) Templates `// HTML`
 
- (4) Metadata `// decorators, which help angular understand a component/module`
+   (4) Metadata `// Decorators, which help angular understand a component/module`
 
- (5) Data binding `// The way which the DOM & Component communicate`
+   (5) Data binding `// The way which the DOM (HTML) & Component communicate`
 
- (6) Directives `// Attributes on an HTML element`
+   (6) Directives `// Attributes on an HTML element to modify its behavior`
 
- (7) Services `// A class with a narrow, well-defined purpose`
+   (7) Services `// A class with a narrow, well-defined purpose`
 
- (8) Dependency injection `// Which components/modules are needed`
+   (8) Dependency injection `// Which components/modules are needed for a module`
 
- 
+  ### Examples:
+
+     (1) Module
+
+     `/Angular2-table/src/modules/app.module.ts`
+
+
+     (2) Component + (4) Metadata + (5) Data Binding + (8) Dependency Injection
+
+     `/Angular2-table/src/modules/components/table/table.component.ts`
+
+
+     (7) Service
+     - API call.
+
+     `/Angular2-table/src/modules/services/people.service.ts`
+
 
 ## [React](https://facebook.github.io/react/)
 - The view of MVC.
 - Tree structure made of components, with single root node.
-- Remove both async behavior and direct DOM manipulation from your view.
-- Uni-directional data flow.
+- Intent is to remove both async behavior and direct DOM manipulation from your view.
+- Unidirectional data flow.
 - [ReactJS style guide](https://github.com/airbnb/javascript/tree/master/react)
 
 ### Languages 
@@ -47,10 +64,10 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 ### ReactJS
 
 #### Component
-- Indpendent and reusuable UI pieces. 
+- Independent and reusable UI pieces. 
 - Accept input in the form of `props` (Arguments which are allowed to change).
 - May have it's own storage in the form of `state` (Local variables).
-- Has lifeCycle functions (pre-defined function interfaces which get called at different stages)
+- Has lifeCycle functions (pre-defined function interfaces which get called at different stages).
   - Example: `render()` gets every time component state changes (`setState` is called) or new `props` are passed from the parent function.
   - Example: `componentWIllUnmount()` gets called after the component is unmounted from the dom. Use case would be to delete an tight polling function (interval).
 
@@ -60,7 +77,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 
   ##### Props
   - The variables passed in by the component's parent.
-  - Read only, Components are “pure” functions. They do not modify the props that they’re passed
+  - Read only, Components are “pure” functions. They do not modify the props that they’re passed.
 
   ##### [Event Handling](https://facebook.github.io/react/docs/handling-events.html)
   - For event handling to work, extra binding must be done within the constructor of a component. `this.onAddPersonClick = this.onAddPersonClick.bind(this);`
@@ -70,7 +87,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
   - Can be done inline in the JS where the JSX are just elements assigned to JS variables. Or it can be done in the JSX returned in render when surrounded with `{...}`. 
 
   ##### Lifting state
-  - Unlike 2-way binding, you have to propergate an event handler down (via props) and call said handler to change the state of a parent (or grandparent++). This means more boilerplate. But makes debugging easier.
+  - Unlike 2-way binding, you have to propagate an event handler down (via props) and call said handler to change the state of a parent (or grandparent++). This means more boilerplate. But makes debugging easier.
 
 #### [Presenters and Containers](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.7p38ctxlh)
 - Design pattern for ReactJS
@@ -78,25 +95,25 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
  ##### Presenter components
  - Get data through props, and display data.
  - Usually have DOM markup (JSX) of it’s own and contains Styles of it’s own.
- - Have no dependencies on the rest of the app: Redux Stores
- - Don’t specify how the data is loaded or mutated
+ - Have no dependencies on the rest of the app: Redux Stores.
+ - Don’t specify how the data is loaded or mutated.
  - Receive data and callbacks exclusively via props (what’s passed in via the parent).
- - Rarely have their own state, when it does it’s UI state rather than data
- - Written as `functional components` unless they need state, lifecycle hooks, or performance optimizations
- - Examples: Page, sidebar, Story, UserInfo, List
+ - Rarely have their own state, when it does it’s UI state rather than data.
+ - Written as `functional components` unless they need state, lifecycle hooks, or performance optimizations.
+ - Examples: Page, sidebar, Story, UserInfo, List.
  `//ReactRedux-table/src/presenter`
 
  ##### Container component:
- - Are concerned with how things work
- - Usually don’t have DOM markup (JSX) of it’s own except for wrapping divs, and no styles for itself
- - Provide the data and behaviors to presenter components or other container components (it’s children)
- - Call Redux actions and provide these as callbacks to the presentational components
- - Serve as a data source (Stateful)
- - Usually generated using higher order components: 
-  - connect() → React + Redux,
-  - createContainer() → Relay
-  - Container.create() → Flux Utils
- - Examples: UserPage, FollwersSidebar, StoryContainer, FollowedUserList
+ - Are concerned with how things work.
+ - Usually don’t have DOM markup (JSX) of it’s own except for wrapping divs, and no styles for itself.
+ - Provide the data and behaviors to presenter components or other container components (it’s children).
+ - Call Redux actions and provide these as callbacks to the presentational components.
+ - Serve as a data source (Stateful).
+ - Usually generated using higher order components:
+  - connect() → React + Redux.
+  - createContainer() → Relay.
+  - Container.create() → Flux Utils.
+ - Examples: UserPage, FollwersSidebar, StoryContainer, FollowedUserList.
  `//ReactRedux-table/src/containers`
 
 ##### [Thinking in React / thinking in components](https://facebook.github.io/react/docs/thinking-in-react.html)
@@ -107,7 +124,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 
 #### Single Source of Truth
 - The whole state of your app is stored in a single object tree inside a single store.
-- The only way to change the state tree is to emit an action (an obj which describes what happened)
+- The only way to change the state tree is to emit an action (an obj which describes what happened).
 - The way these actions transform the state tree is via pure reducers which you write.
 ```
 {
@@ -130,7 +147,6 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
   },
   fetchedPeople: {
     isFetching: false,          // For showing a spinner
-    didInvalidate: false,       // to show that data is stale
     lastUpdated: 1439478405547, // time which the API was called
     peopleIds: [ 1, 2, 3 ]
   }
