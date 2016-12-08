@@ -10,17 +10,16 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
   - TypeScript ⊇ JavaScript
   - Mistakes (associated with types) can be found during transpilation.
 
-### AngularJS 2
-[ insert picture of how these 8 things fit together ]
-- Composed of 8 building blocks
- - Modules `// Functionally the root node of a set of components/services.`
- - Components `// Controller to a view`
- - Templates `// HTML`
- - Metadata `// decorators, which help angular understand a component/module`
- - Data binding `// The way which the DOM & Component communicate`
- - Directives `// Attributes on an HTML element`
- - Services `// A class with a narrow, well-defined purpose`
- - Dependency injection `// Which components/modules are needed`
+### Architecture
+
+ (1) Modules `// Functionally the root node of a set of components/services.`
+ (2) Components `// Controller to a view`
+ (3) Templates `// HTML`
+ (4) Metadata `// decorators, which help angular understand a component/module`
+ (5) Data binding `// The way which the DOM & Component communicate`
+ (6) Directives `// Attributes on an HTML element`
+ (7) Services `// A class with a narrow, well-defined purpose`
+ (8) Dependency injection `// Which components/modules are needed`
  
 
 ## [React](https://facebook.github.io/react/)
