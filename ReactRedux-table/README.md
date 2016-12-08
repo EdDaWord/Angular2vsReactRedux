@@ -1,3 +1,5 @@
+Base off of: https://github.com/tstringer/create-react-app-with-redux
+
 Define the State Shape
 
 ```
