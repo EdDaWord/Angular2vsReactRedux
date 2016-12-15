@@ -11,45 +11,45 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 - AngularJS 2 can be written in TypeScript, Dart, or Vanilla JavaScript.
 - Only TypeScript documentation exists right now. (Dec 7, 2016).
 
-  #### [TypeScript](www.typescriptlang.org)
-  - TypeScript ⊇ JavaScript.
-  - Mistakes (associated with types) can be found during transpilation.
+#### [TypeScript](www.typescriptlang.org)
+- TypeScript ⊇ JavaScript.
+- Mistakes (associated with types) can be found during transpilation.
 
-  ### Architecture
-  <img src="/diagrams/Angular2Architecture.png" width="720">
+### Architecture
+<img src="/diagrams/Angular2Architecture.png" width="720">
 
-   Modules `// Functionally the root node of a set of components/services`
+ Modules `// Functionally the root node of a set of components/services`
 
-   Components `// Controller to the HTML`
+ Components `// Controller to the HTML`
 
-   Templates `// HTML`
+ Templates `// HTML`
 
-   Metadata `// Decorators, which help angular understand a component/module`
+ Metadata `// Decorators, which help angular understand a component/module`
 
-   Data binding `// The way which the DOM (HTML) & Component communicate`
+ Data binding `// The way which the DOM (HTML) & Component communicate`
 
-   Directives `// Components without templates`
+ Directives `// Components without templates`
 
-   Services `// A class with a narrow, well-defined purpose`
+ Services `// A class with a narrow, well-defined purpose`
 
-   Dependency injection `// Which components/modules are needed for a module`
+ Dependency injection `// Which components/modules are needed for a module`
 
-  ### Examples:
+### Examples:
 
-     Module
+   Module
 
-     `/Angular2-table/src/modules/app.module.ts`
-
-
-     Component + Metadata + Data Binding + Dependency Injection
-
-     `/Angular2-table/src/modules/components/table/table.component.ts`
+   `/Angular2-table/src/modules/app.module.ts`
 
 
-     Service
-     - API call.
+   Component + Metadata + Data Binding + Dependency Injection
 
-     `/Angular2-table/src/modules/services/people.service.ts`
+   `/Angular2-table/src/modules/components/table/table.component.ts`
+
+
+   Service
+   - API call.
+
+   `/Angular2-table/src/modules/services/people.service.ts`
 
 
 ## [React](https://facebook.github.io/react/)
