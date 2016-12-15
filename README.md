@@ -55,7 +55,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 - [ReactJS style guide](https://github.com/airbnb/javascript/tree/master/react)
 
 ### Languages 
-- JSX and Vinilla JavaScript.
+- JSX and Vanilla JavaScript.
 
 #### JSX
 - React's version of HTML (camelCase instead of snake-case).
