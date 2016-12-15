@@ -23,7 +23,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 
    (5) Data binding `// The way which the DOM (HTML) & Component communicate`
 
-   (6) Directives `// Attributes on an HTML element to modify its behavior`
+   (6) Directives `// Components without templates`
 
    (7) Services `// A class with a narrow, well-defined purpose`
 
