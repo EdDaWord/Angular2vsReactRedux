@@ -2,6 +2,7 @@
 
 This is a comparison of AngularJS 2 and React + Redux. The purpose of this comparison is to see the pros and cons of each framework when dealing with MVC, API Calls, and Componentization of UI.
 
+<img src="/diagrams/Angular2VsReactReduxSlide.png" width="360">
 [Slides on AngularJS 2 vs React + Redux](https://docs.google.com/presentation/d/1gNFNiEsltpwgnBaeNtWVNwwjQwgQJLNQYsYwXEMXlOQ/edit?usp=sharing)
 
 ## [AngularJS 2](https://angular.io/)
