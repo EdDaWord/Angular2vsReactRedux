@@ -11,7 +11,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 - AngularJS 2 can be written in TypeScript, Dart, or Vanilla JavaScript.
 - Only TypeScript documentation exists right now. (Dec 7, 2016).
 
-#### 1.1.0 [TypeScript](www.typescriptlang.org)
+### 1.1.0 [TypeScript](www.typescriptlang.org)
 - TypeScript ⊇ JavaScript.
 - Mistakes (associated with types) can be found during transpilation.
 
@@ -34,7 +34,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 
  Dependency injection `// Which components/modules are needed for a module`
 
-### 1.2.1 Examples:
+#### 1.2.1 Examples:
 
    Module
 
@@ -77,52 +77,52 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
   - Example: `render()` gets every time component state changes (`setState` is called) or new `props` are passed from the parent function.
   - Example: `componentWIllUnmount()` gets called after the component is unmounted from the dom. Use case would be to delete an tight polling function (interval).
 
-  ##### 2.3.1 State
+  #### 2.3.1 State
   - The component's local memory. Always use `setState()` when updating state.
   - If you don’t use these variables in render, it should not be in the state. State is similar to props, but it is private and fully controlled by the component.
 
-  ##### 2.3.2 Props
+  #### 2.3.2 Props
   - The variables passed in by the component's parent.
   - Read only, Components are “pure” functions. They do not modify the props that they’re passed.
 
-  ##### 2.3.3 [Event Handling](https://facebook.github.io/react/docs/handling-events.html)
+  #### 2.3.3 [Event Handling](https://facebook.github.io/react/docs/handling-events.html)
   - For event handling to work, extra binding must be done within the constructor of a component. `this.onAddPersonClick = this.onAddPersonClick.bind(this);`
   - To prevent default behavior `e.preventDefault()` must be called within the event handler.
 
-  ##### 2.3.4 [Conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html)
+  #### 2.3.4 [Conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html)
   - Can be done inline in the JS where the JSX are just elements assigned to JS variables. Or it can be done in the JSX returned in render when surrounded with `{...}`.
 
-  ##### 2.3.5 Lifting state
+  #### 2.3.5 Lifting state
   - Unlike 2-way binding, you have to propagate an event handler down (via props) and call said handler to change the state of a parent (or grandparent++). This means more boilerplate. But makes debugging easier.
 
 ### 2.4.0 [Presenters and Containers](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.7p38ctxlh)
 - Design pattern for ReactJS
 
- ##### 2.4.1 Presenter components
- - Get data through props, and display data.
- - Usually have DOM markup (JSX) of it’s own and contains Styles of it’s own.
- - Have no dependencies on the rest of the app: Redux Stores.
- - Don’t specify how the data is loaded or mutated.
- - Receive data and callbacks exclusively via props (what’s passed in via the parent).
- - Rarely have their own state, when it does it’s UI state rather than data.
- - Written as `functional components` unless they need state, lifecycle hooks, or performance optimizations.
- - Examples: Page, sidebar, Story, UserInfo, List.
- `//ReactRedux-table/src/presenter`
+#### 2.4.1 Presenter components
+- Get data through props, and display data.
+- Usually have DOM markup (JSX) of it’s own and contains Styles of it’s own.
+- Have no dependencies on the rest of the app: Redux Stores.
+- Don’t specify how the data is loaded or mutated.
+- Receive data and callbacks exclusively via props (what’s passed in via the parent).
+- Rarely have their own state, when it does it’s UI state rather than data.
+- Written as `functional components` unless they need state, lifecycle hooks, or performance optimizations.
+- Examples: Page, sidebar, Story, UserInfo, List.
+`//ReactRedux-table/src/presenter`
 
- ##### 2.4.2 Container component:
- - Are concerned with how things work.
- - Usually don’t have DOM markup (JSX) of it’s own except for wrapping divs, and no styles for itself.
- - Provide the data and behaviors to presenter components or other container components (it’s children).
- - Call Redux actions and provide these as callbacks to the presentational components.
- - Serve as a data source (Stateful).
- - Usually generated using higher order components:
-  - connect() → React + Redux.
-  - createContainer() → Relay.
-  - Container.create() → Flux Utils.
- - Examples: UserPage, FollwersSidebar, StoryContainer, FollowedUserList.
- `//ReactRedux-table/src/containers`
+#### 2.4.2 Container component:
+- Are concerned with how things work.
+- Usually don’t have DOM markup (JSX) of it’s own except for wrapping divs, and no styles for itself.
+- Provide the data and behaviors to presenter components or other container components (it’s children).
+- Call Redux actions and provide these as callbacks to the presentational components.
+- Serve as a data source (Stateful).
+- Usually generated using higher order components:
+ - connect() → React + Redux.
+ - createContainer() → Relay.
+ - Container.create() → Flux Utils.
+- Examples: UserPage, FollwersSidebar, StoryContainer, FollowedUserList.
+`//ReactRedux-table/src/containers`
 
-##### 2.5.0 [Thinking in React / thinking in components](https://facebook.github.io/react/docs/thinking-in-react.html)
+### 2.5.0 [Thinking in React / thinking in components](https://facebook.github.io/react/docs/thinking-in-react.html)
 - A great example of thinking with React
 
 ### 2.6.0 Redux
