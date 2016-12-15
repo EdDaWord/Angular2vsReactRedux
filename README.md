@@ -2,6 +2,8 @@
 
 This is a comparison of AngularJS 2 and React + Redux. The purpose of this comparison is to see the pros and cons of each framework when dealing with MVC, API Calls, and Componentization of UI.
 
+[Slides on AngularJS 2 vs React + Redux](https://docs.google.com/presentation/d/1gNFNiEsltpwgnBaeNtWVNwwjQwgQJLNQYsYwXEMXlOQ/edit?usp=sharing)
+
 ## [AngularJS 2](https://angular.io/)
 - AngularJS 2 can be written in TypeScript, Dart, or Vanilla JavaScript.
 - Only TypeScript documentation exists right now. (Dec 7, 2016).
@@ -48,14 +50,17 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 
 
 ## [React](https://facebook.github.io/react/)
-- The view of MVC.
+
 - Tree structure made of components, with single root node.
 - Intent is to remove both async behavior and direct DOM manipulation from your view.
-- Unidirectional data flow.
+- Unidirectional data flow, for easy debugging.
 - [ReactJS style guide](https://github.com/airbnb/javascript/tree/master/react)
 
+### Architecture
+  <img src="/diagrams/ReactReduxThunkArchitecture.png" width="720">
+
 ### Languages
-- JSX and Vinilla JavaScript.
+- JSX and Vanilla JavaScript.
 
 #### JSX
 - React's version of HTML (camelCase instead of snake-case).
@@ -67,7 +72,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 - Independent and reusable UI pieces.
 - Accept input in the form of `props` (Arguments which are allowed to change).
 - May have it's own storage in the form of `state` (Local variables).
-- Has lifeCycle functions (pre-defined function interfaces which get called at different stages).
+- Has lifeCycle hooks (pre-defined function interfaces which get called at different stages of the component life cycle).
   - Example: `render()` gets every time component state changes (`setState` is called) or new `props` are passed from the parent function.
   - Example: `componentWIllUnmount()` gets called after the component is unmounted from the dom. Use case would be to delete an tight polling function (interval).
 
@@ -115,9 +120,6 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
   - Container.create() → Flux Utils.
  - Examples: UserPage, FollwersSidebar, StoryContainer, FollowedUserList.
  `//ReactRedux-table/src/containers`
-
-### Architecture
-  <img src="/diagrams/ReactReduxThunkArchitecture.png" width="720">
 
 ##### [Thinking in React / thinking in components](https://facebook.github.io/react/docs/thinking-in-react.html)
 - A great example of thinking with React
