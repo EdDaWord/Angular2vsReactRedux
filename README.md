@@ -5,43 +5,43 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 ## [AngularJS 2](https://angular.io/)
 - AngularJS 2 can be written in TypeScript, Dart, or Vanilla JavaScript.
 - Only TypeScript documentation exists right now. (Dec 7, 2016).
-  
+
   #### [TypeScript](www.typescriptlang.org)
   - TypeScript ⊇ JavaScript.
   - Mistakes (associated with types) can be found during transpilation.
 
   ### Architecture
-  <img src="/diagrams/AngularArchitecture.png" width="720">
+  <img src="/diagrams/Angular2Architecture.png" width="720">
 
-   (1) Modules `// Functionally the root node of a set of components/services`
+   Modules `// Functionally the root node of a set of components/services`
 
-   (2) Components `// Controller to the HTML`
+   Components `// Controller to the HTML`
 
-   (3) Templates `// HTML`
+   Templates `// HTML`
 
-   (4) Metadata `// Decorators, which help angular understand a component/module`
+   Metadata `// Decorators, which help angular understand a component/module`
 
-   (5) Data binding `// The way which the DOM (HTML) & Component communicate`
+   Data binding `// The way which the DOM (HTML) & Component communicate`
 
-   (6) Directives `// Components without templates`
+   Directives `// Components without templates`
 
-   (7) Services `// A class with a narrow, well-defined purpose`
+   Services `// A class with a narrow, well-defined purpose`
 
-   (8) Dependency injection `// Which components/modules are needed for a module`
+   Dependency injection `// Which components/modules are needed for a module`
 
   ### Examples:
 
-     (1) Module
+     Module
 
      `/Angular2-table/src/modules/app.module.ts`
 
 
-     (2) Component + (4) Metadata + (5) Data Binding + (8) Dependency Injection
+     Component + Metadata + Data Binding + Dependency Injection
 
      `/Angular2-table/src/modules/components/table/table.component.ts`
 
 
-     (7) Service
+     Service
      - API call.
 
      `/Angular2-table/src/modules/services/people.service.ts`
@@ -54,7 +54,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 - Unidirectional data flow.
 - [ReactJS style guide](https://github.com/airbnb/javascript/tree/master/react)
 
-### Languages 
+### Languages
 - JSX and Vinilla JavaScript.
 
 #### JSX
@@ -64,7 +64,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
 ### ReactJS
 
 #### Component
-- Independent and reusable UI pieces. 
+- Independent and reusable UI pieces.
 - Accept input in the form of `props` (Arguments which are allowed to change).
 - May have it's own storage in the form of `state` (Local variables).
 - Has lifeCycle functions (pre-defined function interfaces which get called at different stages).
@@ -84,7 +84,7 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
   - To prevent default behavior `e.preventDefault()` must be called within the event handler.
 
   ##### [Conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html)
-  - Can be done inline in the JS where the JSX are just elements assigned to JS variables. Or it can be done in the JSX returned in render when surrounded with `{...}`. 
+  - Can be done inline in the JS where the JSX are just elements assigned to JS variables. Or it can be done in the JSX returned in render when surrounded with `{...}`.
 
   ##### Lifting state
   - Unlike 2-way binding, you have to propagate an event handler down (via props) and call said handler to change the state of a parent (or grandparent++). This means more boilerplate. But makes debugging easier.
@@ -115,6 +115,9 @@ This is a comparison of AngularJS 2 and React + Redux. The purpose of this compa
   - Container.create() → Flux Utils.
  - Examples: UserPage, FollwersSidebar, StoryContainer, FollowedUserList.
  `//ReactRedux-table/src/containers`
+
+### Architecture
+  <img src="/diagrams/ReactReduxThunkArchitecture.png" width="720">
 
 ##### [Thinking in React / thinking in components](https://facebook.github.io/react/docs/thinking-in-react.html)
 - A great example of thinking with React
